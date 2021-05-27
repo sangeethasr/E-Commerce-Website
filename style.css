@@ -1,3 +1,144 @@
 body{
     font-family: 'Poppins', sans-serif;
+    margin: 0%;
+    padding: 0%;
 }
+
+/* NAVBAR SECTION */
+
+.navbar{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0rem 4rem 1rem 4rem;
+    padding-top: 1rem;
+}
+
+.company-logo{
+    width: 8rem;
+}
+
+.navbar-list-section{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    float: right;
+}
+
+.navbar-list{
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar-listitems{
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    display: inline-block;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.cart{
+    margin-left: 0.5rem;
+    width: 2rem;
+    filter: grayscale(100%);
+}
+
+.menu{
+    width: 1.8rem;
+    display: none;
+}
+
+@media only screen and (max-width: 800px){
+
+    .navbar-list-section{
+        justify-content: last baseline;
+        align-items: baseline;
+    }
+    .navbar-list{
+        display: none;
+    }
+
+    .menu{
+        display: inline-block;
+        margin-left: 2rem;
+    }
+}
+
+/* SECOND NAVBAR SECTION */
+
+.second-navbar{
+    display: none;
+    width: 100%;
+    background-color: black;
+}
+
+.second-navbar-list{
+    list-style: none;
+    display: block;
+    float: right;
+    padding: 0%;
+    margin: 0%;
+    background-color: black;
+    color: white;
+}
+
+.second-navbar-listitems{
+    font-family: 'Roboto', sans-serif;
+    padding: 0.5rem 2rem 0.5rem 2rem;
+}
+
+/* MAIN SECTION */
+
+.main-section{
+    
+    display: flex;
+    flex-flow: row;
+    flex-basis: 50%;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.main-section1{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.main-section-heading{
+    font-weight: bolder;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.main-section-para{
+    font-family: 'Roboto', sans-serif;
+    line-height: 2;
+    color: grey;
+}
+
+.main-section-btn{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding: 1rem 2rem 1rem 2rem;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    background-color: #ff523b;
+}
+
+.main-section-btn:hover{
+    background-color: #563434;
+}
+
+.main-section-img{
+    height: 40rem;
+    width: 40rem;
+    object-fit: contain;
+}
+
