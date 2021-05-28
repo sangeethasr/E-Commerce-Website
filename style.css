@@ -2,6 +2,7 @@ body{
     font-family: 'Poppins', sans-serif;
     margin: 0%;
     padding: 0%;
+    overflow-x: hidden;
 }
 
 :root {
@@ -210,6 +211,12 @@ body{
 .product-div{
     width: 30%;
     margin: 1rem;
+    transition: transform 0.5s ease-in;
+}
+
+.product-div:hover{
+    
+    transform: translateY(-1rem);
 }
 
 .checked{
@@ -232,24 +239,33 @@ body{
 .exclusive-section-container{
     display: flex;
     flex-flow: column;
+    width: 100vw;
     justify-content: center;
     align-items: center;
     background-color: var(--bg-color);
     padding-top: 5rem;
     padding-bottom: 5rem;
-}
+} 
 
 .exclusive-section{
+    width: 100vw;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-flow: row;
-    flex-basis: 50%;
+    /* flex-basis: 50%; */
     background-color: var(--bg-color);
 }
 
 .exclusive-section-img{
     width: 28rem;
     height: 22rem;
+    margin-right: 2rem; 
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
+
+
 
 .exclusive-section-para{
     width: 25rem;
@@ -257,4 +273,70 @@ body{
     font-size: .8rem;
     color: var(--text-color);
     font-family: 'Roboto', sans-serif;
+}
+
+
+/* TESTMONIALS SECTION */
+
+.testimonials-section{
+    width: 100vw;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.user-opinions{
+    width: 20rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    
+    box-shadow: 0 0 20px 0px rgb(0 0 0 / 10%);
+}
+
+.user-opinions:hover{
+    transform: translateY(-0.5rem);
+    transition: transform 1s ease;
+}
+
+.testimonials-para{
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+    line-height: 2;
+    text-align: center;
+}
+
+.testimonials-img{
+    width: 3rem;
+    border-radius: 50%;
+}
+
+.testimonials-name{
+    color: var(--text-color);
+    font-weight: bolder;
+}
+
+/* LOGO SECTION */
+
+.logo-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.promo-logos{
+    margin: 1.5rem;
+    filter: grayscale(100%);
+}
+
+.promo-logos:hover{
+    filter: grayscale(0%);
 }
