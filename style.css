@@ -211,12 +211,15 @@ body{
 .product-div{
     width: 30%;
     margin: 1rem;
-    transition: transform 0.5s ease-in;
+    transition: transform 1s ease;
 }
 
 .product-div:hover{
-    
-    transform: translateY(-1rem);
+    transform: translateY(-0.5rem);
+}
+
+.product-div:not(hover){
+    transform: translateY(0.5rem);
 }
 
 .checked{
@@ -268,7 +271,7 @@ body{
 
 
 .exclusive-section-para{
-    width: 25rem;
+    width: 26rem;
     line-height: 2;
     font-size: .8rem;
     color: var(--text-color);
@@ -288,6 +291,11 @@ body{
     margin-bottom: 4rem;
 }
 
+.testimonials-quote{
+    font-size: 2rem;
+    color: var(--highlight-color);
+}
+
 .user-opinions{
     width: 20rem;
     display: flex;
@@ -295,14 +303,19 @@ body{
     justify-content: center;
     align-items: center;
     margin: 1rem;
-    padding: 1rem;
+    padding: 2rem 1rem 2rem 1rem;
     
     box-shadow: 0 0 20px 0px rgb(0 0 0 / 10%);
 }
 
 .user-opinions:hover{
     transform: translateY(-0.5rem);
-    transition: transform 1s ease;
+    transition: transform 1s ease-in-out;
+}
+
+.user-opinions:not(hover){
+    transform: translateY(0.5rem);
+    transition: transform 1s ease-in-out;
 }
 
 .testimonials-para{
@@ -310,6 +323,11 @@ body{
     font-family: 'Roboto', sans-serif;
     line-height: 2;
     text-align: center;
+}
+
+.testimonials-stars{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .testimonials-img{
@@ -339,4 +357,67 @@ body{
 
 .promo-logos:hover{
     filter: grayscale(0%);
+}
+
+/* FOOTER SECTION */
+
+footer{
+    background-color: black;
+    color: white;
+    width: 100vw;
+}
+
+.footer-container{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+}
+
+.footer-download-app{
+    margin: 4rem 4rem 2rem 4rem;
+}
+.footer-redstore-section,
+.footer-useful-links,
+.footer-Follow-us{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4rem 4rem 2rem 4rem;
+}
+
+footer small{
+    color: var(--text-color-2);
+}
+
+footer h4{
+    margin-top: 0%;
+}
+
+.footer-download-para{
+    font-size: small;
+    color: var(--text-color-2);
+    margin: 0%;
+}
+
+.footer-redstore-para{
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.footer-line{
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.copyright-section{
+    font-size: small;
+    color: var(--text-color-2);
+    text-align: center;
+    margin: 0%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
