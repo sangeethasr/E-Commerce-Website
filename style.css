@@ -16,6 +16,7 @@ body{
 /* NAVBAR SECTION */
 
 .navbar{
+    width: 100vw;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -102,19 +103,24 @@ body{
 /* MAIN SECTION */
 
 .main-section{
-    
+
     display: flex;
     flex-flow: row;
-    flex-basis: 50%;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 6rem;
+    margin-right: 6rem;
 }
 
 .main-section1{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: flex-start;
+    flex-basis: 50%;
+    min-width: 300px;
+}
+
+.main-section2{
+    flex-basis: 50%;
+    min-width: 300px;
 }
 
 .main-section-heading{
@@ -124,13 +130,11 @@ body{
 }
 
 .main-section-para{
-    font-family: 'Roboto', sans-serif;
     line-height: 2;
     color: var(--text-color);
 }
 
 .main-section-btn{
-    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: bold;
     color: white;
@@ -146,50 +150,55 @@ body{
 }
 
 .main-section-img{
-    height: 40rem;
-    width: 40rem;
-    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.header{
+    background: radial-gradient(#fff, var(--bg-color));
 }
 
 /* MAIN PAGE CATEGORY SECTION */
 
 .category-section{
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-    justify-content: space-around;
     margin-top: 4rem;
     margin-bottom: 4rem;
 }
+
 .category-section-images{
     display: flex;
     flex-flow: row;
     align-items: center;
-    justify-content: center;
-}
+    justify-content: space-around;
+    max-width: 1080px;
+    margin: auto;
+}  
 
 .category-section-image{
-    width: 25%;
-    margin: 1rem;
+    flex-basis: 30%;
+    min-width: 250px;
+}
+
+.category-img{
+    height: 100%;
+    width: 100%;
 }
 
 
 /* FEATURED PRODUCT SECTION */
 
 .featured-product-section{
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+    max-width: 1080px;
+    margin: auto;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
 }
 
 .title{
     color: var(--text-color);
     text-align: center;
-    margin: 0%;
-    margin-bottom: 0.5rem;
+    margin: 0% auto 0.5rem;
+    position: relative;
 }
 
 .title-underline{
@@ -204,14 +213,18 @@ body{
 .featured-products{
     display: flex;
     flex-flow: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
 
 .product-div{
-    width: 30%;
-    margin: 1rem;
+    flex-basis: 20%;
+    min-width: 200px;
     transition: transform 1s ease;
+}
+
+.product-image{
+    width: 100%;
 }
 
 .product-div:hover{
@@ -230,77 +243,58 @@ body{
 .product-value
 {
     color: var(--text-color);
-    font-family: 'Roboto', sans-serif;
 }
 
-.product-image{
-    width: 15rem;
-}
+
 
 /* EXCLUSIVE SECTION */
 
-.exclusive-section-container{
-    display: flex;
-    flex-flow: column;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bg-color);
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-} 
 
 .exclusive-section{
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row;
-    /* flex-basis: 50%; */
     background-color: var(--bg-color);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
 }
 
 .exclusive-section-img{
-    width: 28rem;
+    width: 30rem;
     height: 22rem;
-    margin-right: 2rem; 
     padding-top: 5rem;
     padding-bottom: 5rem;
 }
 
-
-
 .exclusive-section-para{
-    width: 26rem;
     line-height: 2;
     font-size: .8rem;
     color: var(--text-color);
-    font-family: 'Roboto', sans-serif;
 }
 
 
 /* TESTMONIALS SECTION */
 
-.testimonials-section{
-    width: 100vw;
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
+.testimonials{
     margin-top: 4rem;
     margin-bottom: 4rem;
 }
 
-.testimonials-quote{
-    font-size: 2rem;
-    color: var(--highlight-color);
+.testimonials-section{
+    max-height: 1080px;
+    margin: auto;
+}
+
+.testimonials-row{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .user-opinions{
-    width: 20rem;
+    flex-basis: 20%;
+    min-width: 250px;
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin: 1rem;
     padding: 2rem 1rem 2rem 1rem;
@@ -318,10 +312,13 @@ body{
     transition: transform 1s ease-in-out;
 }
 
+.testimonials-quote{
+    font-size: 2rem;
+    color: var(--highlight-color);
+}
+
 .testimonials-para{
     color: var(--text-color);
-    font-family: 'Roboto', sans-serif;
-    line-height: 2;
     text-align: center;
 }
 
@@ -342,16 +339,25 @@ body{
 
 /* LOGO SECTION */
 
-.logo-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.brands{
     margin-top: 4rem;
     margin-bottom: 4rem;
 }
 
-.promo-logos{
+.logo-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand-col{
+    width: 160px;
     margin: 1.5rem;
+}
+
+.promo-logos{
+    width: 100%;
+    cursor: pointer;
     filter: grayscale(100%);
 }
 

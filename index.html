@@ -7,16 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" 
-    integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 
 
     <link rel="stylesheet" href="style.css">
@@ -26,8 +21,8 @@
 <body>
 
     <!-- NAVBAR SECTION -->
-    <div style="background-color: #ffd6d6;">
-        <nav class="navbar">
+    <div class="header">
+        <!-- <nav class="navbar">
             <img src="images/logo.png" alt="Redstore logo" class="company-logo">
             <div class="navbar-list-section">
                 <ul class="navbar-list">
@@ -40,10 +35,10 @@
                 <img src="images/cart.png" alt="Cart" class="cart">
                 <img src="images/menu.png" alt="menu" class="menu">
             </div>
-        </nav>
+        </nav> -->
 
         <!-- SECOND NAVBAR SECTION -->
-        <div class="second-navbar">
+        <!-- <div class="second-navbar">
             <ul class="second-navbar-list">
                 <li class="second-navbar-listitems">Home</li>
                 <li class="second-navbar-listitems">Products</li>
@@ -51,7 +46,7 @@
                 <li class="second-navbar-listitems">Contacts</li>
                 <li class="second-navbar-listitems">Account</li>
             </ul>
-        </div>
+        </div> -->
 
         <!-- MAIN SECTION -->
 
@@ -65,11 +60,11 @@
                     Success isn't always about greatness. It's about consistency. Consistent
                     hard work gain success. Gretness will come.
                 </p>
-                <button class="main-section-btn">Explore Now -></button>
+                <button class="main-section-btn">Explore Now &#8594;</button>
             </div>
 
             <div class="main-section2">
-                <img src="images/image1.png" alt="" class="main-section-img">
+                <img src="images/image1.png" class="main-section-img">
             </div>
 
         </section>
@@ -79,9 +74,12 @@
 
     <section class="category-section">
         <div class="category-section-images">
-            <img class="category-section-image" src="images/category-1.jpg" alt="category-1">
-            <img class="category-section-image" src="images/category-2.jpg" alt="category-2">
-            <img class="category-section-image" src="images/category-3.jpg" alt="category-3">
+            <div class="category-section-image"><img class="category-img" src="images/category-1.jpg" alt="category-1">
+            </div>
+            <div class="category-section-image"><img class="category-img" src="images/category-2.jpg" alt="category-2">
+            </div>
+            <div class="category-section-image"><img class="category-img" src="images/category-3.jpg" alt="category-3">
+            </div>
         </div>
     </section>
 
@@ -91,8 +89,7 @@
     <section class="featured-product-section">
 
         <h2 class="title">Featured Products</h2>
-        <div class="title-underline"></div>
-
+        <!-- <div class="title-underline"></div> -->
 
 
         <div class="featured-products">
@@ -158,7 +155,7 @@
     <section class="featured-product-section">
 
         <h2 class="title">Latest Products</h2>
-        <div class="title-underline"></div>
+        <!-- <div class="title-underline"></div> -->
 
 
 
@@ -282,100 +279,113 @@
 
     <section class="exclusive-section">
 
-        <div class="main-section2">
-            <img src="images/exclusive.png" alt="" class="exclusive-section-img">
+        <div class="main-section">
+            <div class="main-section2">
+                <img src="images/exclusive.png" class="exclusive-section-img">
+            </div>
+
+            <div class="main-section1">
+                <p class="exclusive-section-sub-heading">Exclusive Available on RedStore</p>
+                <h1 class="main-section-heading">
+                    Smart Band 4
+                </h1>
+                <small class="exclusive-section-para">
+                    The Mi Smart Band 4 features a 39.9% larger (than Mi Band 3)
+                    AMOLED color full-touch display with adjustable brightness, so everything is clear as can be.
+                </small>
+                <button class="main-section-btn">Buy Now &#8594;</button>
+            </div>
         </div>
 
-        <div class="main-section1">
-            <p class="exclusive-section-sub-heading">Exclusive Available on RedStore</p>
-            <h1 class="main-section-heading">
-                Smart Band 4
-            </h1>
-            <p class="exclusive-section-para">
-                The Mi Smart Band 4 features a 39.9% larger (than Mi Band 3)
-                AMOLED color full-touch display with adjustable brightness, so everything is clear as can be.
-            </p>
-            <button class="main-section-btn">Buy Now -></button>
-        </div>
     </section>
 
 
 
     <!-- TESTMONIALS SECTION -->
 
+    <section class="testimonials">
+    
 
-    <section class="testimonials-section">
+        <div class="testimonials-section">
 
-        <div class="user-opinions">
-            <span class="testimonials-quote"><i class="fas fa-quote-left"></i></span>
-            <small class="testimonials-para">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </small>
+            <div class="testimonials-row">
 
-            <div class="testimonials-stars">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
+                <div class="user-opinions">
+
+                    <span class="testimonials-quote"><i class="fas fa-quote-left"></i></span>
+                    <small class="testimonials-para">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </small>
+
+                    <div class="testimonials-stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+
+                    <img class="testimonials-img" src="images/user1.png" alt="Sean Parker">
+                    <p class="testimonials-name">Sean Parker</p>
+                </div>
+
+                <div class="user-opinions">
+                    <span class="testimonials-quote"><i class="fas fa-quote-left"></i></span>
+                    <small class="testimonials-para">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </small>
+
+                    <div class="testimonials-stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+
+                    <img class="testimonials-img" src="images/user2.png" alt="Sean Parker">
+                    <p class="testimonials-name">Mike Smith</p>
+                </div>
+
+                <div class="user-opinions">
+                    <span class="testimonials-quote"><i class="fas fa-quote-left"></i></span>
+                    <small class="testimonials-para">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    </small>
+                    <div class="testimonials-stars">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+
+                    <img class="testimonials-img" src="images/user3.png" alt="Sean Parker">
+                    <p class="testimonials-name">Mabel Joe</p>
+                </div>
+
             </div>
 
-            <img class="testimonials-img" src="images/user1.png" alt="Sean Parker">
-            <p class="testimonials-name">Sean Parker</p>
-        </div>
-
-        <div class="user-opinions">
-            <span class="testimonials-quote"><i class="fas fa-quote-left"></i></span>
-            <small class="testimonials-para">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </small>
-
-            <div class="testimonials-stars">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-            </div>
-
-            <img class="testimonials-img" src="images/user2.png" alt="Sean Parker">
-            <p class="testimonials-name">Mike Smith</p>
-        </div>
-
-        <div class="user-opinions">
-            <span class="testimonials-quote"><i class="fas fa-quote-left"></i></span>
-            <small class="testimonials-para">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-            </small>
-            <div class="testimonials-stars">
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star checked"></span>
-                <span class="fa fa-star"></span>
-            </div>
-
-            <img class="testimonials-img" src="images/user3.png" alt="Sean Parker">
-            <p class="testimonials-name">Mabel Joe</p>
         </div>
 
     </section>
 
 
     <!-- LOGO SECTION -->
-
-    <section class="logo-section">
-        <img class="promo-logos" src="images/logo-godrej.png" alt="logo-godrej">
-        <img class="promo-logos" src="images/logo-oppo.png" alt="logo-oppo">
-        <img class="promo-logos" src="images/logo-coca-cola.png" alt="logo-coca-cola">
-        <img class="promo-logos" src="images/logo-paypal.png" alt="logo-paypal">
-        <img class="promo-logos" src="images/logo-philips.png" alt="logo-philips">
+    <section class="brands">
+        <div class="logo-section">
+            <div class="brand-col"><img class="promo-logos" src="images/logo-godrej.png" alt="logo-godrej"></div>
+            <div class="brand-col"><img class="promo-logos" src="images/logo-oppo.png" alt="logo-oppo"></div>
+            <div class="brand-col"><img class="promo-logos" src="images/logo-coca-cola.png" alt="logo-coca-cola"></div>
+            <div class="brand-col"><img class="promo-logos" src="images/logo-paypal.png" alt="logo-paypal"></div>
+            <div class="brand-col"><img class="promo-logos" src="images/logo-philips.png" alt="logo-philips"></div>
+        </div>
     </section>
 
     <!-- FOOTER SECTION -->
@@ -384,42 +394,42 @@
 
         <div class="footer-container">
 
-                <div class="footer-download-app">
-                    <h4>Download our App</h4>
-                    <p class="footer-download-para">Download App for Android and ios mobile phone.</p><br>
-                
-                    <img src="images/play-store.png" alt="play-store-logo" width="120">
-                    <img src="images/app-store.png" alt="app-store-logo" width="120">
-                
-                 </div>
+            <div class="footer-download-app">
+                <h4>Download our App</h4>
+                <p class="footer-download-para">Download App for Android and ios mobile phone.</p><br>
 
-                <div class="footer-redstore-section">
-                    <img src="images/logo-white.png" alt="RedStore-logo" width="200">
-                    <small class="footer-redstore-para">Our Purpose Is To Sustainably Make the Pleasure and <br>
-                        Benefits of Sports Accessible to the Many.</small>
-                </div>
-
-                <div class="footer-useful-links">
-                    <h4>Useful Links</h4>
-                    <small>Coupons</small>
-                    <small>Blog Post</small>
-                    <small>Return Policy</small>
-                    <small>Join Affiliate</small>
-                </div>
-
-                <div class="footer-Follow-us">
-                    <h4>Follow us</h4>
-                    <small>Facebook</small>
-                    <small>Twitter</small>
-                    <small>Instagram</small>
-                    <small>Youtube</small>
-                </div>
+                <img src="images/play-store.png" alt="play-store-logo" width="120">
+                <img src="images/app-store.png" alt="app-store-logo" width="120">
 
             </div>
 
-            <hr class="footer-line">
+            <div class="footer-redstore-section">
+                <img src="images/logo-white.png" alt="RedStore-logo" width="200">
+                <small class="footer-redstore-para">Our Purpose Is To Sustainably Make the Pleasure and <br>
+                    Benefits of Sports Accessible to the Many.</small>
+            </div>
 
-            <p class="copyright-section">Copytight 2020 - Rahul Kumar Sinha</p>
+            <div class="footer-useful-links">
+                <h4>Useful Links</h4>
+                <small>Coupons</small>
+                <small>Blog Post</small>
+                <small>Return Policy</small>
+                <small>Join Affiliate</small>
+            </div>
+
+            <div class="footer-Follow-us">
+                <h4>Follow us</h4>
+                <small>Facebook</small>
+                <small>Twitter</small>
+                <small>Instagram</small>
+                <small>Youtube</small>
+            </div>
+
+        </div>
+
+        <hr class="footer-line">
+
+        <p class="copyright-section">Copytight 2020 - Rahul Kumar Sinha</p>
 
     </footer>
 
