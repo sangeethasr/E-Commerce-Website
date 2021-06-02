@@ -64,6 +64,44 @@ p{
 }
 
 
+.menu-icon{
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
+
+/* ----- media quary for menu ----- */
+
+@media only screen and (max-width:800px) {
+
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+    }
+
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #333;
+        width: 100%;
+        overflow: hidden;
+        transition:  max-height 0.5s;
+    }
+
+    nav ul li{
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a{
+        color: white;
+    }
+}
+
+
 /* MAIN PAGE SECTION */
 
 
@@ -179,3 +217,188 @@ h4{
     transform: translateY(-5px);
 }
 
+/* EXCLIUSIVE OFFER */
+
+.offer{
+    background: radial-gradient(#ffffff, var(--bg-color));
+    margin-top: 80px;
+    padding: 30px 0;
+}
+
+.col-2 .offer-img{
+    padding: 50px;
+}
+
+small{
+    color: var(--text-color);
+}
+
+/* TESTIMONIAL SECTION */
+
+.testimonial{
+    margin-top: 100px;
+}
+
+.testimonial .col-3{
+    flex-basis: 25%;
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px 0px rgb(0 0 0 / 10%);
+    transition: transform 0.5s; 
+}
+
+.testimonial .col-3:hover{
+    transform: translateY(-5px);
+}
+
+.testimonial .col-3 p{
+    font-size: x-small;
+    margin: 12px 0;
+}
+
+.testimonial .col-3 img{
+    width: 50px;
+    margin-top: 20px;
+    border-radius: 50px;
+}
+
+.testimonial .col-3 h3{
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: medium;
+}
+
+/* BRANDS */
+
+.brands{
+    margin: 100px auto;
+}
+
+.col-5{
+    width: 160px;
+}
+
+.col-5 img{
+    width: 100%;
+    cursor: pointer;
+    filter: grayscale(100%);
+}
+
+.col-5 img:hover{
+    filter: grayscale(0);
+}
+
+
+/* FOOTER */
+
+.footer{
+    background-color: black;
+    color: var(--text-color-2);
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+
+.footer h3{
+    color: white;
+    text-align: center;
+}
+
+.footer p{
+    color: var(--text-color-2);
+}
+
+.footer-col-1, .footer-col-2, .footer-col-3, .footer-col-4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.footer-col-1{
+    flex-basis: 30%;
+}
+
+.footer-col-2{
+    flex: 1;
+    text-align: center;
+}
+
+.footer-col-2 img{
+    width: 180px;
+    margin-bottom: 20px;
+}
+
+.footer-col-3, .footer-col-4{
+    flex-basis: 12%;
+    text-align: center;
+}
+
+ul{
+    list-style: none;
+    padding: 0%;
+}
+
+.app-logo{
+    margin-top: 20px;
+}
+
+.app-logo img{
+    width: 140px;
+}
+
+.footer hr{
+    border: none;
+    background: #b5b5b5;
+    height: 1px;
+    margin: 20px 0;
+}
+
+.copyright{
+    text-align: center;
+}
+
+
+/* ALL PRODUCTS */
+
+
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto 50px;
+}
+
+select{
+    border: 1px solid var(--highlight-color);
+    padding: 5px;
+}
+
+select:focus{
+    border: none;
+}
+
+.page-btn{
+    margin: 0 auto 80px;
+}
+
+.page-btn span{
+    display: inline-block;
+    border: 1px solid var(--highlight-color);
+    margin-left: 10px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.page-btn span:hover{
+    background: var(--highlight-color);
+    color: white;
+}
+/* ----- media quary for less than 600 screen size ----- */
+
+@media only screen and (max-width:600px) {
+    .row{
+        text-align: center;
+    }
+
+    .col-2, .col-3, .col-4{
+        flex-basis: 100%;
+    }
+}
