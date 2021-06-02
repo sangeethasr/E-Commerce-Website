@@ -391,6 +391,47 @@ select:focus{
     background: var(--highlight-color);
     color: white;
 }
+
+
+/* SINGLE PRODUCT DETAILS */
+
+.single-product{
+    margin-top: 80px;
+}
+
+.single-product .col-2 img{
+   padding: 0%;
+}
+
+.single-product .col-2{
+    flex-basis: 45%;
+}
+
+.single-product h4{
+    margin: 20px 0;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.single-product select{
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-right: 10px;
+}
+
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: small;
+    margin-right: 10px;
+    border: 1px solid var(--highlight-color);
+    outline: none;
+}
+
+
 /* ----- media quary for less than 600 screen size ----- */
 
 @media only screen and (max-width:600px) {
@@ -401,4 +442,20 @@ select:focus{
     .col-2, .col-3, .col-4{
         flex-basis: 100%;
     }
+
+    /* SINGLE PRODUCT DETAILS */
+
+    .single-product .row{
+        text-align: left;
+    }
+
+    .single-product .col-2{
+        padding: 20px 0;
+    }
+
+    .single-product h1{
+        font-size: 26px;
+        line-height: 32px;
+    }
 }
+
