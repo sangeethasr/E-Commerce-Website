@@ -646,7 +646,7 @@ form a{
 }
 
 .contact-form-links .fas{
-    color: #ff523b;
+    color: var(--highlight-color);
 }
 
 .contact-form-links p{
@@ -666,6 +666,19 @@ form a{
         display: block;
         color: var(--text-color);
     }
+}
+
+/* ABOUT US SECTION */
+
+.about-us{
+    margin: 80px auto;
+}
+
+.about-us p{
+    color: var(--text-color);
+    font-size: small;
+    line-height: 2;
+    text-align: center;
 }
 
 /* ----- media quary for less than 600 screen size ----- */
