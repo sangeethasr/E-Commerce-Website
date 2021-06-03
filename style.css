@@ -47,6 +47,7 @@ nav{
 nav ul {
     display: inline-block;
     list-style: none;
+    margin: 0;
 }
 
 nav ul li {
@@ -495,6 +496,107 @@ td:last-child{
 
 th:last-child{
     text-align: right;
+}
+
+
+
+/* ACCOUNT PAGE */
+
+.account-page{
+    padding: 50px 0;
+    background: radial-gradient(#fff, var(--bg-color));
+}
+
+.form-container{
+    background: white;
+    width: 300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-container span{
+    font-weight: bold;
+    padding: 0 10px;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: large;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.form-btn{
+    display: inline-block;
+}
+
+.form-container form{
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition:  transform 1s;
+}
+
+.form-container form input:focus{
+    outline: none;
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+#loginForm{
+    left: -350px;
+}
+
+#registerForm{
+    left: 0;
+}
+
+#loginForm input{
+    width: 85%;
+    height: 30px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+#loginForm .btn{
+    width: 85%;
+}
+
+#registerForm input{
+    width: 98%;
+    height: 30px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+#registerForm .btn{
+    width: 98%;
+}
+
+form .btn{
+    border: none;
+    outline: none;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+form a{
+    font-size: smaller;
+}
+
+
+#indicator{
+    width: 100px;
+    border: none;
+    background: var(--highlight-color);
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(50px);
+    transition:  transform 1s;
 }
 
 
