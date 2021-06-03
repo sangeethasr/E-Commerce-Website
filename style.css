@@ -600,6 +600,74 @@ form a{
 }
 
 
+/* CONTACT US SECTION */
+
+::placeholder {/* Firefox */
+    font-family: 'Poppins', sans-serif;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-family: 'Poppins', sans-serif;
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-form-container{
+    margin: 80px auto;
+}
+
+.contact-form-container form,
+.contact-form-container p{
+    max-width: 500px;
+}
+
+.contact-form-container form input,
+.contact-form-container form textarea{
+    width: 95%;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.contact-form-links{
+    margin: 80px auto;
+}
+
+.contact-form-links h3{
+    display: none;
+}
+
+.contact-form-links li{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 30px;
+    color: var(--text-color);
+}
+
+.contact-form-links .fas{
+    color: #ff523b;
+}
+
+.contact-form-links p{
+    margin: 0;
+    padding-left: 20px;
+}
+
+@media only screen and (max-width:650px){
+    .contact-form-links{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        margin-bottom: 80px;
+    }
+
+    .contact-form-links h3{
+        display: block;
+        color: var(--text-color);
+    }
+}
+
 /* ----- media quary for less than 600 screen size ----- */
 
 @media only screen and (max-width:600px) {

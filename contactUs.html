@@ -15,13 +15,12 @@
 
 
     <link rel="stylesheet" href="style.css">
-    <title>Account</title>
+    <title>Contact Us</title>
 </head>
 
 <body>
 
     <!-- NAVBAR SECTION -->
-    
 
     <div class="container">
 
@@ -46,52 +45,51 @@
         </div>
     </div>
 
-    <!-- ACCOUNT PAGE -->
+    <!-- CONTACT US SECTION -->
 
-    <div class="account-page">
-        <div class="container">
-            <div class="row">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-2">
 
-                <div class="col-2">
-                    <img src="images/image1.png">
-                </div>
+                <div class="contact-form-container">
 
-                <div class="col-2">
+                    <h1>Contact Us</h1>
 
-                    <div class="form-container">
+                    <p style="font-size: small;">Please fill out the quick form and we will be in touch with lightening speed.</p>
 
-                        <div class="form-btn">
-                            <span onclick="viewLoginForm()">Login</span>
-                            <span onclick="viewRegisterForm()">Register</span>
-                            <hr id="indicator">
-                        </div>
-
-                        <!-- login form -->
-
-                        <form id="loginForm">
-                            <input type="text" placeholder="Username">
-                            <input type="text" placeholder="Password">
-                            <button type="submit" class="btn">Login</button>
-                            <a href="">Forget Password</a>
-                        </form>
-
-                        <!-- register form -->
-
-                        <form id="registerForm">
-                            <input type="text" placeholder="Username">
-                            <input type="email" placeholder="Email">
-                            <input type="text" placeholder="Password">
-                            <button type="submit" class="btn">Register</button>
-                        </form>
-
-                    </div>
-
+                    <form>
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <textarea placeholder="Message..." rows="6"></textarea>
+                        <button type="submit" class="btn">Submit</button>
+                    </form>
                 </div>
 
             </div>
+
+            <div class="col-2">
+                <div class="contact-form-links">
+                    <h3>For support or any questions.</h3>
+
+                    <ul>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <p>abcd@xyz.com</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <p>1234567890</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe"></i>
+                            <p>abcd street, xyz</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
-    
+
     <!-- FOOTER -->
 
     <div class="footer">
