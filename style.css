@@ -434,13 +434,13 @@ select:focus{
 
 /* CART ITEMS DETAILS */
 
-.cart-empty{
+#cartEmpty{
+    display: none;
     margin-bottom: 80px;
 }
 
 .cart-empty-card{
     max-width: 500px;
-    /* border: 1px solid red; */
 }
 
 
@@ -471,11 +471,9 @@ select:focus{
     font-weight: bold;
 }
 
-.cart-items{
-    display: none;
-}
 
 .cart-page{
+    display: block;
     margin: 80px auto;
 }
 
@@ -487,6 +485,14 @@ table{
 .cart-info{
     display: flex;
     flex-wrap: wrap;
+}
+
+.cart-info p{
+    margin: 0%;
+}
+
+.cart-info a{
+    display: block;
 }
 
 th{

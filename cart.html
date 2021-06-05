@@ -47,7 +47,7 @@
 
     <!-- CART ITEMS DETAILS -->
 
-    <div class="cart-empty">
+    <div id="cartEmpty">
         <div class="small-container">
     
             <div class="row">
@@ -64,10 +64,10 @@
     </div>
 
 
-    <div class="cart-items">
-        <div class="small-container cart-page">
+   
+        <div class="small-container cart-page" id="cartItems">
 
-            <table>
+            <table id="cartTable">
 
                 <tr>
                     <th>Product</th>
@@ -75,19 +75,21 @@
                     <th>Subtotal</th>
                 </tr>
 
-                <tr>
+                <!-- product details starts from here 
+                 <tr>
                     <td>
                         <div class="cart-info">
-                            <img src="images/buy-1.jpg" alt="">
+                            <img src="images/buy-1.jpg">
                             <div>
-                                <p style="margin: 0%;">Printed T-shirt</p>
+                                <p>Printed T-shirt</p>
                                 <small>$50.00</small>
-                                <br>
-                                <a href="">Remove</a>
+                                <a href="" class="RemoveFromCart">Remove</a>
                             </div>
                         </div>
                     </td>
+
                     <td><input type="number" value="1"></td>
+
                     <td>$50</td>
                 </tr>
 
@@ -96,10 +98,9 @@
                         <div class="cart-info">
                             <img src="images/buy-2.jpg" alt="">
                             <div>
-                                <p style="margin: 0%;">Printed T-shirt</p>
+                                <p>Printed T-shirt</p>
                                 <small>$50.00</small>
-                                <br>
-                                <a href="">Remove</a>
+                                <a href="" class="RemoveFromCart">Remove</a>
                             </div>
                         </div>
                     </td>
@@ -112,16 +113,15 @@
                         <div class="cart-info">
                             <img src="images/buy-3.jpg" alt="">
                             <div>
-                                <p style="margin: 0%;">Printed T-shirt</p>
+                                <p>Printed T-shirt</p>
                                 <small>$50.00</small>
-                                <br>
-                                <a href="">Remove</a>
+                                <a href="" class="RemoveFromCart">Remove</a>
                             </div>
                         </div>
                     </td>
                     <td><input type="number" value="1"></td>
                     <td>$50</td>
-                </tr>
+                </tr>-->
 
 
             </table>
@@ -131,24 +131,24 @@
 
                     <tr>
                         <td>Subtotal</td>
-                        <td>$200.00</td>
+                        <td id="subTotal"></td>
                     </tr>
 
                     <tr>
                         <td>Tax</td>
-                        <td>$35.00</td>
+                        <td id="tax"></td>
                     </tr>
 
                     <tr>
                         <td>Total</td>
-                        <td>$235.00</td>
+                        <td id="totalPrice"></td>
                     </tr>
 
                 </table>
             </div>
 
         </div>
-    </div>
+    
 
     <!-- FOOTER -->
 
@@ -203,6 +203,7 @@
     </div>
 
     <script src="app.js"></script>
+    <script src="cart.js"></script>
 </body>
 
 </html>
