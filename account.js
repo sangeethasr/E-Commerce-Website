@@ -17,3 +17,11 @@ function viewLoginForm(){
     registerForm.style.transform = "translateX(330px)";
     indicator.style.transform = "translateX(-50px)";
 }
+
+// CREATE AN ACCOUNT IN THE E-COMMERCE SITE //
+
+var loginBtn = document.getElementById("loginBtn")
+
+loginBtn.addEventListener('click', ()=> {
+    window.alert("working");
+});
