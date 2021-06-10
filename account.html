@@ -69,7 +69,7 @@
                         <!-- login form -->
 
                         <form id="loginForm">
-                            <input type="text" placeholder="Username">
+                            <input type="email" placeholder="Email">
                             <input type="text" placeholder="Password">
                             <button type="submit" class="btn" id="loginBtn">Login</button>
                             <a href="">Forget Password</a>
@@ -78,13 +78,16 @@
                         <!-- register form -->
 
                         <form id="registerForm">
-                            <input type="text" placeholder="Username">
-                            <input type="email" placeholder="Email">
-                            <input type="text" placeholder="Password">
+                            <a id="test">Create your account now</a>
+                            <input type="email" id="registerEmail" placeholder="Email">
+                            <input type="text" id="registerPassword" placeholder="Password">
+                            <input type="text" id="confirmPassword" placeholder="Confirm Password">
                             <button type="submit" class="btn" id="registerBtn">Register</button>
                         </form>
 
                     </div>
+
+                    <p id="snackbar"></p>
 
                 </div>
 
@@ -144,12 +147,12 @@
         </div>
     </div>
 
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <!-- The core Firebase JS SDK is always required and must be listed first 
     <scrip src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></scrip>
     
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-    https://firebase.google.com/docs/web/setup#available-libraries -->
-    <scrip src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></scrip>
+    TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries 
+    <scrip src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></scrip>-->
 
     <script src="app.js"></script>
     <script src="account.js"></script>

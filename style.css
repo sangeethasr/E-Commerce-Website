@@ -647,6 +647,49 @@ form a{
 }
 
 
+#snackbar{
+    visibility: hidden;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    bottom: 50px;
+    width: 280px;
+    margin: auto;
+    text-align: center;
+    font-size: x-small;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: var(--text-color-1);
+    background-color: #ff944d;
+    border: 1px solid #ff944d
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 1s, fadeout 1s 3s;
+    animation: fadein 1s, fadeout 1s 3s;
+  }
+  
+  @-webkit-keyframes fadein {
+    from { opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadein {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {opacity: 1;} 
+    to {opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+
 /* CONTACT US SECTION */
 
 ::placeholder {/* Firefox */
