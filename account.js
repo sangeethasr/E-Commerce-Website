@@ -21,6 +21,7 @@ function viewLoginForm(){
 
 
 // CREATE AN ACCOUNT IN THE E-COMMERCE SITE //
+
 var Toast = document.getElementById("snackbar");
 
 
@@ -121,6 +122,15 @@ function addtoFirebase(){
             Toast.className = "show";
             setTimeout(function () { Toast.className = Toast.className.replace("show", ""); }, 2000);
         }
+        else{
+
+            localStorage.setItem('signupUser', JSON.stringify(signupResponse));
+            
+            Toast.innerHTML = "Logged In";
+
+            loginFunction();
+
+        }
 
     })
     .catch(error => {
@@ -133,7 +143,7 @@ function addtoFirebase(){
 }
 
 
-// SET UP USER SIGN IN FUNCTION //
+// SET UP USER LOG IN FUNCTION //
 
 
 var loginBtn = document.getElementById("loginBtn");
@@ -144,6 +154,7 @@ loginBtn.addEventListener('click', (e) => {
 
     var loginEmail = document.getElementById("loginEmail").value;
     var loginPassword = document.getElementById("loginPassword").value;
+    var Toast = document.getElementById("snackbar");
 
     const logindata = {email : loginEmail, password : loginPassword};
 
@@ -171,9 +182,17 @@ loginBtn.addEventListener('click', (e) => {
         }
         
         if(loginResponse.registered == true){
-            window.location.href ="index.html";
             
+            // add json data to local storage//
+
+            localStorage.setItem('loginuser', JSON.stringify(loginResponse));
+            
+            Toast.innerHTML = "Logged In";
+
+            loginFunction();
         }
+
+        
 
         Toast.className = "show";
         setTimeout(function(){ Toast.className = Toast.className.replace("show", ""); }, 2000);
@@ -182,9 +201,71 @@ loginBtn.addEventListener('click', (e) => {
     .catch(error => {
        console.error('catch : ',error);
        Toast.innerHTML = error;
-
        
+       Toast.className = "show";
+       setTimeout(function(){ Toast.className = Toast.className.replace("show", ""); }, 2000);
     })
 
 })
 
+
+
+function loginFunction() {
+
+    // get json data from local storage //
+    
+
+    var user = JSON.parse(localStorage.getItem('loginuser'));
+    var registeredUser = JSON.parse(localStorage.getItem('signupUser'));
+
+    var logoutPage = document.getElementById("logoutPage");
+    var accountPage = document.getElementById("accountPage");
+
+    
+    if (user != null || registeredUser != null) {
+        if (accountPage.style.display != "none") {
+
+            accountPage.style.display = "none";
+
+            localStorage.setItem('accountSection', 'none');
+
+            logoutPage.style.display = "block";
+
+            localStorage.setItem('logoutSection', 'block');
+
+            window.location.href ="index.html";
+        }
+    }
+}
+
+
+// function which is used to set the display of logout page when load a page //
+
+window.onload = function(){
+
+    var logoutPage = document.getElementById("logoutPage");
+    var accountPage = document.getElementById("accountPage");
+
+    var accountSection = localStorage.getItem('accountSection');
+    var logoutSection = localStorage.getItem('logoutSection');
+
+    accountPage.style.display = accountSection;
+    
+    logoutPage.style.display = logoutSection;
+}
+
+
+// LOGOUT FUNCTION //
+
+var logoutBtn = document.getElementById("logoutBtn");
+
+logoutBtn.addEventListener('click', () => {
+    localStorage.clear();
+    window.location.reload();
+})
+
+var noLogoutBtn = document.getElementById("noLogoutBtn");
+
+noLogoutBtn.addEventListener('click', () => {
+    window.location.href ="index.html";
+})
