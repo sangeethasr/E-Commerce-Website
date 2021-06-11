@@ -549,7 +549,8 @@ th:last-child{
 
 /* ACCOUNT PAGE */
 
-.account-page{
+#accountPage{
+    display: block;
     padding: 50px 0;
     background: radial-gradient(#fff, var(--bg-color));
 }

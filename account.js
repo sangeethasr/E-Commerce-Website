@@ -20,9 +20,9 @@ function viewLoginForm(){
 
 
 
-
-
 // CREATE AN ACCOUNT IN THE E-COMMERCE SITE //
+var Toast = document.getElementById("snackbar");
+
 
 var registerBtn = document.getElementById("registerBtn");
 
@@ -34,7 +34,6 @@ registerBtn.addEventListener('click', (e)=> {
     var registerEmail = document.getElementById("registerEmail").value;
     var registerPassword = document.getElementById("registerPassword").value;
     var confirmPassword = document.getElementById("confirmPassword").value;
-    var Toast = document.getElementById("snackbar");
     var length = registerPassword.length;
 
     // password conformation //
@@ -89,7 +88,6 @@ registerBtn.addEventListener('click', (e)=> {
 function addtoFirebase(){
     var registerEmail = document.getElementById("registerEmail").value;
     var registerPassword = document.getElementById("registerPassword").value;
-    var Toast = document.getElementById("snackbar");
 
     // passing data to the sign up REST API as an object //
 
@@ -107,18 +105,23 @@ function addtoFirebase(){
         return response.json();
     })
     .then(signupResponse => {
-        console.log(signupResponse.error);
 
-        var errorCode = signupResponse.error.message;
-        if(errorCode == "EMAIL_EXISTS"){
-            Toast.innerHTML = "Email already exists";
-        }
-        else{
-            Toast.innerHTML = signupResponse.error.message;
+        if (signupResponse.error != null) {
+
+            console.log(signupResponse.error);
+
+            var errorCode = signupResponse.error.message;
+            if (errorCode == "EMAIL_EXISTS") {
+                Toast.innerHTML = "Email already exists";
+            }
+            else {
+                Toast.innerHTML = signupResponse.error.message;
+            }
+
+            Toast.className = "show";
+            setTimeout(function () { Toast.className = Toast.className.replace("show", ""); }, 2000);
         }
 
-        Toast.className = "show";
-        setTimeout(function(){ Toast.className = Toast.className.replace("show", ""); }, 2000);
     })
     .catch(error => {
        console.error('catch : ',error);
@@ -128,3 +131,60 @@ function addtoFirebase(){
        setTimeout(function(){ Toast.className = Toast.className.replace("show", ""); }, 2000);
     })
 }
+
+
+// SET UP USER SIGN IN FUNCTION //
+
+
+var loginBtn = document.getElementById("loginBtn");
+
+loginBtn.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+    var loginEmail = document.getElementById("loginEmail").value;
+    var loginPassword = document.getElementById("loginPassword").value;
+
+    const logindata = {email : loginEmail, password : loginPassword};
+
+    console.log(logindata);
+    fetch('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCZ7Q99gdBmy5n2gJzbwPs8dPnBz7u_zUU' , {
+        method : 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+          },
+        body: JSON.stringify(logindata)
+    })
+    .then(response => {
+        return response.json();
+    })
+    .then(loginResponse => {
+
+        console.log(loginResponse);
+
+        if(loginResponse.error != null){
+
+            console.log(loginResponse.error);
+            var errorCode = loginResponse.error.message;
+            Toast.innerHTML = errorCode;
+
+        }
+        
+        if(loginResponse.registered == true){
+            window.location.href ="index.html";
+            
+        }
+
+        Toast.className = "show";
+        setTimeout(function(){ Toast.className = Toast.className.replace("show", ""); }, 2000);
+        
+    })
+    .catch(error => {
+       console.error('catch : ',error);
+       Toast.innerHTML = error;
+
+       
+    })
+
+})
+
