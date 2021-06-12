@@ -35,7 +35,13 @@ function menuToggle(){
     }
 }
 
+//  FOOTER CREDITS //
 
+var copyright = document.querySelectorAll(".copyright");
+
+copyright[0].addEventListener('click', () => { window.location.href = "https://www.youtube.com/c/EasyTutorialsVideo" });
+
+copyright[1].addEventListener('click', () => { window.location.href = "https://www.linkedin.com/in/sangeetha-rajan/"; });
 
 // REDIRECTION FUNCTION //
 
