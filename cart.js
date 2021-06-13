@@ -1,109 +1,175 @@
-// CART ARRAY //
+// // CART ARRAY //
 
-var cartList = [
-    {
-        id:0,
-        image: 'images/buy-1.jpg',
-        name: 'Red T-Shirt',
-        price: 200,
-        quantity: 3
-    },
+// var cartList = [
+//     {
+//         id: 0,
+//         removeid: 'id0',
+//         image: 'images/product-1.jpg',
+//         name: 'Red T-Shirt',
+//         price: 200,
+//         quantity: 3
+//     },
 
-    {
-        id:1,
-        image: 'images/buy-2.jpg',
-        name: 'shoe',
-        price: 500,
-        quantity: 1
-    },
+//     {
+//         id: 1,
+//         removeid: 'id1',
+//         image: 'images/buy-2.jpg',
+//         name: 'shoe',
+//         price: 500,
+//         quantity: 1
+//     },
 
-    {
-        id:2,
-        image: 'images/buy-3.jpg',
-        name: 'pant',
-        price: 300,
-        quantity: 1
-    }
-]
+//     {
+//         id: 2,
+//         removeid: 'id2',
+//         image: 'images/buy-3.jpg',
+//         name: 'pant',
+//         price: 300,
+//         quantity: 2
+//     }
+// ]
 
 
-// ITEMS ADDING INTO CART //
+// // ITEMS ADDING INTO CART //
 
-function addItemToCart(){
+// function addItemToCart(n) {
 
-    const cartTable = document.getElementById("cartTable");
+//     var cartTable = document.getElementById("cartTable");
 
-    // All elements to be added //
+//     // All elements to be added //
 
-    var tableRow = document.createElement("tr");
-    tableRow.id = "tableRow";
+//     var tableRow = document.createElement("tr");
+//     tableRow.id = cartList[n].removeid;
 
-    var tableData1 = document.createElement("td");
-        var cartInfo = document.createElement("div");
-        cartInfo.className = "cart-info";
+//     var x = cartList[n].removeid;
 
-        var productImage = document.createElement("img");
+//     var tableData1 = document.createElement("td");
+//     var cartInfo = document.createElement("div");
+//     cartInfo.className = "cart-info";
 
-        var tableDiv = document.createElement("div");
-            var product = document.createElement("p");
-            var price = document.createElement("small");
-            var button = document.createElement("a");
-            button.className = "RemoveFromCart";
+//     var productImage = document.createElement("img");
+
+//     var tableDiv = document.createElement("div");
+//     var product = document.createElement("p");
+//     var price = document.createElement("small");
+//     var button = document.createElement("a");
+//     button.className = "RemoveFromCart";
+//     button.id = cartList[n].id;
+
+//     var y = cartList[n].id;
     
-    var tableData2 = document.createElement("td");
-        var quantity = document.createElement("input");
 
-    var tableData3 = document.createElement("td");
+//     var tableData2 = document.createElement("td");
+//     var quantity = document.createElement("input");
 
-
-    // Push elements into HTML //
-
-    cartTable.appendChild(tableRow);
-
-    tableRow.appendChild(tableData1);
- 
-            tableData1.appendChild(cartInfo);
+//     var tableData3 = document.createElement("td");
 
 
-                cartInfo.appendChild(productImage);
-                cartInfo.appendChild(tableDiv);
+//     // Push elements into HTML //
 
-                    tableDiv.appendChild(product);
-                    tableDiv.appendChild(price);
-                    tableDiv.appendChild(button);
-        
+//     cartTable.appendChild(tableRow);
 
-    tableRow.appendChild(tableData2);
-        tableData2.appendChild(quantity)
+//     tableRow.appendChild(tableData1);
 
-    tableRow.appendChild(tableData3);
+//     tableData1.appendChild(cartInfo);
 
-    // Edit pushed elements info from array //
 
-    productImage.src = cartList[0].image;
-    product.innerHTML = cartList[0].name;
-    price.innerHTML = '$' + cartList[0].price;
-    button.innerHTML = 'remove';
+//     cartInfo.appendChild(productImage);
+//     cartInfo.appendChild(tableDiv);
 
-    quantity.type = "number";
-    quantity.value = cartList[0].quantity;
+//     tableDiv.appendChild(product);
+//     tableDiv.appendChild(price);
+//     tableDiv.appendChild(button);
+
+
+//     tableRow.appendChild(tableData2);
+//     tableData2.appendChild(quantity)
+
+//     tableRow.appendChild(tableData3);
+
+//     // Edit pushed elements info from array //
+
+//     productImage.src = cartList[n].image;
+//     product.innerHTML = cartList[n].name;
+//     price.innerHTML = '$' + cartList[n].price;
+//     button.innerHTML = 'remove';
+
+//     quantity.type = "number";
+//     quantity.value = cartList[n].quantity;
+
+//     tableData3.innerHTML = '$' + cartList[n].price;
+
+//     addToArray(x, y);    
+// }
+
+// var idarray =[];
+// var tablearray =[];
+
+// function addToArray(x, y){
+
+//     idarray.push(y);
+//     tablearray.push(x);
+//     removeItemFromCart(idarray,tablearray);
+// }
+
+// function removeItemFromCart(deletearray, deleteitemarray){
+//     var cartTable = document.getElementById("cartTable");
+
+//     deletearray.forEach((deleteid) => {
+//         deleteitemarray.forEach((deletechild) => {
+            
+//             document.getElementById(deleteid).addEventListener('click', () => {
+
+//                 var child = document.getElementById(deletechild);
+//                 cartTable.removeChild(child);
+//                 delete deletearray[deleteid];
+//                 delete deleteitemarray[deletechild];
+
+//             });
+//         });
+//     });
+// }
+
+
+// function totalAmount(count) {
+
+//     // To find the length of array of objects //
+//     // objectLenght = Object.keys(cartList).length;
+
+//     var subTotal = document.getElementById("subTotal");
+//     var tax = document.getElementById("tax");
+//     var totalPrice = document.getElementById("totalPrice");
+
+//     var TST = 0;
+
+//     for (var i = 0; i < count; i++) {
+
+//         var ST = cartList[i].quantity * cartList[i].price;
+//         TST = TST + ST;
+//     }
+
+
+//     var T = TST * 0.15;
+//     var TP = TST + T;
+
+//     subTotal.innerHTML = '$' + TST;
+//     tax.innerHTML = '$' + T;
+//     totalPrice.innerHTML = '$' + TP;
+// }
+
+
+
+// var index = 0;
+
+// var cartTest = document.getElementById("cartTest");
+
+// cartTest.addEventListener('click', () => {
+
+//     addItemToCart(index);
+//     index++;
     
-    tableData3.innerHTML = '$' + cartList[0].price;
-}
+//     // calculate the total amount //
 
-addItemToCart();
+//     totalAmount(index);
 
-
-// calculate the total amount //
-
-var ST = cartList[0].quantity * cartList[0].price;
-var T = ST * 0.15;
-var TP = ST + T;
-
-var subTotal = document.getElementById("subTotal");
-var tax = document.getElementById("tax");
-var totalPrice = document.getElementById("totalPrice");
-
-subTotal.innerHTML = '$' + ST;
-tax.innerHTML = '$' + T;
-totalPrice.innerHTML = '$' + TP;
+// })

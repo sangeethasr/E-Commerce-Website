@@ -1,0 +1,80 @@
+{
+    "product1": {
+        "id": "product1",
+        "image": "images/product-1.jpg",
+        "name": "Red TShirt",
+        "price": 599
+    },
+    "product2": {
+        "id": "product2",
+        "image": "images/product-2.jpg",
+        "name": "Men Solid Sneakers",
+        "price": 800
+    },
+    "product3": {
+        "id": "product3",
+        "image": "images/product-3.jpg",
+        "name": "Men Joggers",
+        "price": 550
+    },
+    "product4": {
+        "id": "product4",
+        "image": "images/product-4.jpg",
+        "name": "Dark Blue TShirt",
+        "price": 600
+    },
+    "product5": {
+        "id": "product5",
+        "image": "images/product-5.jpg",
+        "name": "Men Solid Sneakers",
+        "price": 800
+    },
+    "product6": {
+        "id": "product6",
+        "image": "images/product-6.jpg",
+        "name": "Black Printed TShirt",
+        "price": 600
+    },
+    "product7": {
+        "id": "product7",
+        "image": "images/product-7.jpg",
+        "name": "Men Running Socks",
+        "price": 180
+    },
+    "product8": {
+        "id": "product8",
+        "image": "images/product-8.jpg",
+        "name": "Men Analogue Watch",
+        "price": 950
+    },
+    "product9": {
+        "id": "product9",
+        "image": "images/product-9.jpg",
+        "name": "Men Chronograph Analogue Watch",
+        "price": 1000
+    },
+    "product10": {
+        "id": "product10",
+        "image": "images/product-10.jpg",
+        "name": "Men Running Shoe",
+        "price": 700
+    },
+    "product11": {
+        "id": "product11",
+        "image": "images/product-11.jpg",
+        "name": "Men Solid Slip-On Sneakers",
+        "price": 400
+    },
+    "product12": {
+        "id": "product12",
+        "image": "images/product-12.jpg",
+        "name": "Men Straight Fit Track Pants",
+        "price": 600
+    },
+    "product13": {
+        "id": "product13",
+        "image": "images/exclusive.png",
+        "name": "Smart Band 4",
+        "price": 2200
+    }
+}
