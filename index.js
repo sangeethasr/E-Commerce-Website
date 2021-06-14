@@ -4,7 +4,12 @@ var productIdList = ["product1", "product2", "product3", "product4", "product5",
 productIdList.forEach((productId) => {
 
     document.getElementById(productId).addEventListener('click', () => {
-        localStorage.setItem('productId', productId);
-        location.href = '/productDetailsPage.html';
+        upadateUrl(productId);
     });
 });
+
+function upadateUrl(productId){
+
+    location.href = 'http://127.0.0.1:5500/productDetailsPage.html' + '?productid='+productId;
+
+}
