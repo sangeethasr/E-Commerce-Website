@@ -1,33 +1,3 @@
-// // CART ARRAY //
-
-// var cartList = [
-//     {
-//         id: 0,
-//         removeid: 'id0',
-//         image: 'images/product-1.jpg',
-//         name: 'Red T-Shirt',
-//         price: 200,
-//         quantity: 3
-//     },
-
-//     {
-//         id: 1,
-//         removeid: 'id1',
-//         image: 'images/buy-2.jpg',
-//         name: 'shoe',
-//         price: 500,
-//         quantity: 1
-//     },
-
-//     {
-//         id: 2,
-//         removeid: 'id2',
-//         image: 'images/buy-3.jpg',
-//         name: 'pant',
-//         price: 300,
-//         quantity: 2
-//     }
-// ]
 
 
 // // ITEMS ADDING INTO CART //

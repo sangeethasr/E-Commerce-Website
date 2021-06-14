@@ -41,21 +41,33 @@ fetch('https://ecommerce-project-efa9a-default-rtdb.firebaseio.com/productList.j
 // add items to cartlist //
 
 function additemstoFirebase(cimage, cname, cprice, productid) {
- 
-    var cquantity = document.getElementById("PDetailsQuantity").value;
-    const cartdata = {image: cimage, name: cname, price: cprice, quantity: cquantity};
 
-    fetch('https://ecommerce-project-efa9a-default-rtdb.firebaseio.com/cartList/' + productid + '.json', {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(cartdata)
-    }).then(response => {
-        return response.json();
-    }).then(cartdbresponse => {
-        console.log(cartdbresponse);
-    }).catch(error => {
-        console.error('catch : ', error);
-    })
+    var userid = localStorage.getItem('userId');
+
+    if (userid != null) {
+
+        var cquantity = document.getElementById("PDetailsQuantity").value;
+        const cartdata = { image: cimage, name: cname, price: cprice, quantity: cquantity };
+
+        fetch('https://ecommerce-project-efa9a-default-rtdb.firebaseio.com/cartList/' + userid + '/' + productid + '.json', {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(cartdata)
+        }).then(response => {
+            return response.json();
+        }).then(cartdbresponse => {
+            console.log(cartdbresponse);
+            window.location.href = "cart.html";
+        }).catch(error => {
+            console.error('catch : ', error);
+        })
+    }else{
+
+        var popupContainer = document.getElementById("popupContainer");
+        popupContainer.style.display = "flex";
+        var closepopup = document.getElementById("closepopup");
+        closepopup.addEventListener('click', () => {popupContainer.style.display = "none"});
+    }
 }
