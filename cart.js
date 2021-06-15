@@ -1,145 +1,166 @@
+fetchCartList();
+
+function fetchCartList() {
+
+    var userid = localStorage.getItem('userId');
+
+    fetch('https://ecommerce-project-efa9a-default-rtdb.firebaseio.com//cartList/' + userid + '.json', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(response => {
+        return response.json();
+    }).then(cartDbResponse => {
+        console.log(cartDbResponse);
+
+        crateCartList(cartDbResponse, userid);
+    })
+
+}
 
 
-// // ITEMS ADDING INTO CART //
+// LISTING ITEMS FROM FIREBASE CARTLIST //
 
-// function addItemToCart(n) {
+function crateCartList(cartDbResponse, userid) {
 
-//     var cartTable = document.getElementById("cartTable");
+    const keyArray = Object.keys(cartDbResponse);
+    length = keyArray.length;
+    console.log(keyArray);
 
-//     // All elements to be added //
+    if (length !== 0) {
 
-//     var tableRow = document.createElement("tr");
-//     tableRow.id = cartList[n].removeid;
+        var cartEmpty = document.getElementById("cartEmpty");
+        var cartItems = document.getElementById("cartItems");
+        cartEmpty.style.display = "none";
+        cartItems.style.display = "block";
 
-//     var x = cartList[n].removeid;
+        for (var n = 0; n < length; n++) {
 
-//     var tableData1 = document.createElement("td");
-//     var cartInfo = document.createElement("div");
-//     cartInfo.className = "cart-info";
+            var id = keyArray[n];
 
-//     var productImage = document.createElement("img");
+            var cartTable = document.getElementById("cartTable");
 
-//     var tableDiv = document.createElement("div");
-//     var product = document.createElement("p");
-//     var price = document.createElement("small");
-//     var button = document.createElement("a");
-//     button.className = "RemoveFromCart";
-//     button.id = cartList[n].id;
+            // All elements to be added //
 
-//     var y = cartList[n].id;
+            var tableRow = document.createElement("tr");
+
+            var tableData1 = document.createElement("td");
+            var cartInfo = document.createElement("div");
+            cartInfo.className = "cart-info";
+
+            var productImage = document.createElement("img");
+
+            var tableDiv = document.createElement("div");
+            var product = document.createElement("p");
+            var price = document.createElement("small");
+            var button = document.createElement("a");
+            button.className = "RemoveFromCart";
+            button.id = id;
+            tableRow.className = id;
+
+            button.addEventListener('click', (e) => {
+
+                console.log('clicked :', e.target.id);
+
+                fetch('https://ecommerce-project-efa9a-default-rtdb.firebaseio.com//cartList/' + userid + '/' + e.target.id + '.json', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }).then(response => {
+                    return response.json();
+                }).then(deleteDbResponse => {
+                    console.log(deleteDbResponse);
+                    removeAllChildNodes(cartTable);
+                    fetchCartList();
+                })
+            });
+
+            var tableData2 = document.createElement("td");
+            var quantity = document.createElement("input");
+
+            var tableData3 = document.createElement("td");
+
+
+            // Push elements into HTML //
+
+            cartTable.appendChild(tableRow);
+
+            tableRow.appendChild(tableData1);
+
+            tableData1.appendChild(cartInfo);
+
+
+            cartInfo.appendChild(productImage);
+            cartInfo.appendChild(tableDiv);
+
+            tableDiv.appendChild(product);
+            tableDiv.appendChild(price);
+            tableDiv.appendChild(button);
+
+
+            tableRow.appendChild(tableData2);
+            tableData2.appendChild(quantity)
+
+            tableRow.appendChild(tableData3);
+
+            // Edit pushed elements info from array //
+
+            productImage.src = cartDbResponse[id].image;
+            product.innerHTML = cartDbResponse[id].name;
+            price.innerHTML = '$' + cartDbResponse[id].price;
+            button.innerHTML = 'remove';
+
+            quantity.type = "number";
+            quantity.value = cartDbResponse[id].quantity;
+
+            tableData3.innerHTML = '$' + cartDbResponse[id].price;
+
+            // to find the total price of the items in cart //
+
+            totalAmount(cartDbResponse, keyArray);
+
+            // remove item from cart list //
+        }
+
+    }
+}
+
+function removeAllChildNodes(cartTable) {
+    while (cartTable.children[1]) {
+        cartTable.removeChild(cartTable.children[1]);
+    }
     
+        var cartEmpty = document.getElementById("cartEmpty");
+        var cartItems = document.getElementById("cartItems");
+        cartEmpty.style.display = "block";
+        cartItems.style.display = "none";
+}
 
-//     var tableData2 = document.createElement("td");
-//     var quantity = document.createElement("input");
+function totalAmount(cartdata, keyArray) {
 
-//     var tableData3 = document.createElement("td");
+    var l = keyArray.length;
 
+    var subTotal = document.getElementById("subTotal");
+    var tax = document.getElementById("tax");
+    var totalPrice = document.getElementById("totalPrice");
 
-//     // Push elements into HTML //
+    var TST = 0;
 
-//     cartTable.appendChild(tableRow);
+    for (var i = 0; i < l; i++) {
 
-//     tableRow.appendChild(tableData1);
+        var x = keyArray[i];
 
-//     tableData1.appendChild(cartInfo);
-
-
-//     cartInfo.appendChild(productImage);
-//     cartInfo.appendChild(tableDiv);
-
-//     tableDiv.appendChild(product);
-//     tableDiv.appendChild(price);
-//     tableDiv.appendChild(button);
-
-
-//     tableRow.appendChild(tableData2);
-//     tableData2.appendChild(quantity)
-
-//     tableRow.appendChild(tableData3);
-
-//     // Edit pushed elements info from array //
-
-//     productImage.src = cartList[n].image;
-//     product.innerHTML = cartList[n].name;
-//     price.innerHTML = '$' + cartList[n].price;
-//     button.innerHTML = 'remove';
-
-//     quantity.type = "number";
-//     quantity.value = cartList[n].quantity;
-
-//     tableData3.innerHTML = '$' + cartList[n].price;
-
-//     addToArray(x, y);    
-// }
-
-// var idarray =[];
-// var tablearray =[];
-
-// function addToArray(x, y){
-
-//     idarray.push(y);
-//     tablearray.push(x);
-//     removeItemFromCart(idarray,tablearray);
-// }
-
-// function removeItemFromCart(deletearray, deleteitemarray){
-//     var cartTable = document.getElementById("cartTable");
-
-//     deletearray.forEach((deleteid) => {
-//         deleteitemarray.forEach((deletechild) => {
-            
-//             document.getElementById(deleteid).addEventListener('click', () => {
-
-//                 var child = document.getElementById(deletechild);
-//                 cartTable.removeChild(child);
-//                 delete deletearray[deleteid];
-//                 delete deleteitemarray[deletechild];
-
-//             });
-//         });
-//     });
-// }
+        var ST = cartdata[x].quantity * cartdata[x].price;
+        TST = TST + ST;
+    }
 
 
-// function totalAmount(count) {
+    var T = TST * 0.15;
+    var TP = TST + T;
 
-//     // To find the length of array of objects //
-//     // objectLenght = Object.keys(cartList).length;
-
-//     var subTotal = document.getElementById("subTotal");
-//     var tax = document.getElementById("tax");
-//     var totalPrice = document.getElementById("totalPrice");
-
-//     var TST = 0;
-
-//     for (var i = 0; i < count; i++) {
-
-//         var ST = cartList[i].quantity * cartList[i].price;
-//         TST = TST + ST;
-//     }
-
-
-//     var T = TST * 0.15;
-//     var TP = TST + T;
-
-//     subTotal.innerHTML = '$' + TST;
-//     tax.innerHTML = '$' + T;
-//     totalPrice.innerHTML = '$' + TP;
-// }
-
-
-
-// var index = 0;
-
-// var cartTest = document.getElementById("cartTest");
-
-// cartTest.addEventListener('click', () => {
-
-//     addItemToCart(index);
-//     index++;
-    
-//     // calculate the total amount //
-
-//     totalAmount(index);
-
-// })
+    subTotal.innerHTML = '$' + TST;
+    tax.innerHTML = '$' + T.toFixed(2);
+    totalPrice.innerHTML = '$' + TP.toFixed(2);
+}

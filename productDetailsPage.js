@@ -29,9 +29,10 @@ fetch('https://ecommerce-project-efa9a-default-rtdb.firebaseio.com/productList.j
     const cimage = inputDbResponse[productid].image;
     const cname = inputDbResponse[productid].name;
     const cprice = inputDbResponse[productid].price;
+    const cid = inputDbResponse[productid].id;
 
     addToCart.addEventListener('click', () => {
-        additemstoFirebase(cimage, cname, cprice, productid);
+        additemstoFirebase(cimage, cname, cprice, productid, cid);
     });
 
 }).catch(error => {
@@ -40,14 +41,15 @@ fetch('https://ecommerce-project-efa9a-default-rtdb.firebaseio.com/productList.j
 
 // add items to cartlist //
 
-function additemstoFirebase(cimage, cname, cprice, productid) {
+function additemstoFirebase(cimage, cname, cprice, productid, cid) {
 
     var userid = localStorage.getItem('userId');
+    var cquantity = document.getElementById("PDetailsQuantity").value;
+    console.log(cquantity);
 
-    if (userid != null) {
+    if (userid !== null && cquantity !== "0") {
 
-        var cquantity = document.getElementById("PDetailsQuantity").value;
-        const cartdata = { image: cimage, name: cname, price: cprice, quantity: cquantity };
+        const cartdata = {id: cid, image: cimage, name: cname, price: cprice, quantity: cquantity };
 
         fetch('https://ecommerce-project-efa9a-default-rtdb.firebaseio.com/cartList/' + userid + '/' + productid + '.json', {
             method: 'PATCH',
@@ -65,6 +67,13 @@ function additemstoFirebase(cimage, cname, cprice, productid) {
         })
     }else{
 
+        var warning = document.getElementById("warning");
+        if(userid === null){
+            warning.innerHTML = "PLEASE LOGIN";
+        }else if(cquantity === "0"){
+            warning.innerHTML = "PLEASE ADD ANY QUANTITY";
+        }
+        
         var popupContainer = document.getElementById("popupContainer");
         popupContainer.style.display = "flex";
         var closepopup = document.getElementById("closepopup");

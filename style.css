@@ -459,7 +459,7 @@ select:focus{
 /* CART ITEMS DETAILS */
 
 #cartEmpty{
-    display: none;
+    display: block;
     margin-bottom: 80px;
 }
 
@@ -496,8 +496,8 @@ select:focus{
 }
 
 
-.cart-page{
-    display: block;
+#cartItems{
+    display: none;
     margin: 80px auto;
 }
 
