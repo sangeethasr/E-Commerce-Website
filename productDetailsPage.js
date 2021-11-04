@@ -1,3 +1,6 @@
+import {BASIC_URL} from "./constants.js";
+console.log("BASIC_URL",BASIC_URL);
+
 const params = new URLSearchParams(window.location.search);
 const productid = params.get('productid');
 console.log('productDetailsPage: ', productid);
@@ -12,7 +15,7 @@ var addToCart = document.getElementById("addToCart");
 // fetch details of a particular item from product list (firebase)//
 
 
-fetch('https://ecommerce-project-efa9a-default-rtdb.firebaseio.com/productList.json', {
+fetch(BASIC_URL+'/productList.json', {
     method: 'GET',
     headers: {
         'Content-Type': 'application/json',
@@ -51,7 +54,7 @@ function additemstoFirebase(cimage, cname, cprice, productid, cid) {
 
         const cartdata = {id: cid, image: cimage, name: cname, price: cprice, quantity: cquantity };
 
-        fetch('https://ecommerce-project-efa9a-default-rtdb.firebaseio.com/cartList/' + userid + '/' + productid + '.json', {
+        fetch(BASIC_URL+'/cartList/' + userid + '/' + productid + '.json', {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

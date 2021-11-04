@@ -591,7 +591,8 @@ th:last-child{
 }
 
 .logout-img{
-    width: fit-content;
+    /* width: fit-content; */
+    width: 10em;
     color: var(--bg-color);
 }
 
