@@ -24,10 +24,5 @@ productIdList.forEach((productId) => {
 });
 
 function upadateUrl(productId){
-  var currentLocation = window.location.protocol + window.location.hostname;
-  // console.log("currentLocation:", currentLocation);
-  //   location.href =
-  //     "http://127.0.0.1:5500/productDetailsPage.html" + "?productid=" + productId;
-  // location.href = currentLocation + "?productid=" + productId;
   location.href = "./productDetailsPage.html" + "?productid=" + productId;
 }
