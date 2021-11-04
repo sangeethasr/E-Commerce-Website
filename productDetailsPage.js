@@ -1,5 +1,5 @@
 import {BASIC_URL} from "./constants.js";
-console.log("BASIC_URL",BASIC_URL);
+// console.log("BASIC_URL",BASIC_URL);
 
 const params = new URLSearchParams(window.location.search);
 const productid = params.get('productid');
